@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<!-- Dark from the first frame: the browser default is white until the CSS
+     loads, which shows as a white flash on a page switch or reload. -->
+<html lang="en" data-bs-theme="dark" style="background-color: #222; color-scheme: dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="dark">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="HITCON CTF 2026"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ctf2026.hitcon.org"/>
+    <meta property="og:image" content="https://ctf2026.hitcon.org/static/img/og_img.e05caabe0c32.png"/>
+    <meta property="og:site_name" content="HITCON CTF 2026"/>
+    <meta property="og:description" content="Online Jeopardy, Oct 23 - Oct 25 2026 (UTC)"/>
+    <title>HITCON CTF 2026</title>
+
+    <link rel="shortcut icon" type="image/png" href="/static/img/hitcon-ctf_monotone.d81fcb661da5.png"/>
+    <!-- Do not paint until the page content is parsed. Chrome keeps showing
+         the old page until then, so a page switch shows no partial page.
+         No page switch fade (view transitions): its snapshot of the old page
+         can be white, e.g. right after Chrome starts. -->
+    <link rel="expect" href="#main-end" blocking="render">
+
+    <!-- Fonts are served from this site and preloaded, so text is ready at the
+         first paint and never blinks in after a page switch. -->
+    <link rel="preload" href="/static/fonts/roboto-latin.f9788110cacc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/aldrich-latin.a7bb3cc8ab44.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.6032a13145bb.css">
+    <link rel="stylesheet" href="/static/css/main.5c2c733bf227.css">
+
+    
+    
+  <style>#submit-form, #submit-status { display: none !important; }</style>
+  </head>
+  <body>
+    <!-- Logout is a POST. The navbar's Logout button submits this form. -->
+    <form id="logoutform" method="post" action="/team/logout" style="display:none">
+      <input type="hidden" name="csrfmiddlewaretoken" value="GOVHJqFXSG2nZCYcgfU2t0tk42DWTs7UWV6RUIi4BEiNmCEuSzQswdmuzqeDVvNn">
+    </form>
+
+    <!-- Values for components.js and the page scripts (dashboard.js,
+         scoreboard.js). The navbar and footer are rendered by Django. -->
+    <script>
+      window.__SITE_CONFIG__ = {
+        teamId:           -1,
+        contestStartTime: 1792764000.0,
+        contestEndTime:   1792936800.0,
+        currentTime:      1795099199.2362173,
+        refreshInterval:  30,
+        // Team pages are <teamUrlPrefix><id>.
+        teamUrlPrefix:    '/team/',
+        submitUrl:        '/dashboard/submit_flag',
+        loginUrl:         '/team/login',
+      };
+      // IS_STATIC is overridden to true in pre-generated static exports.
+      var IS_STATIC = true;
+    </script>
+
+    <nav id="top-nav" class="navbar navbar-expand-md fixed-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="/">HITCON CTF 2026</a>
+    <button type="button" class="navbar-toggler"
+            data-bs-toggle="collapse" data-bs-target="#bs-navbar-collapse"
+            aria-controls="bs-navbar-collapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/">Dashboard</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/scoreboard">Scoreboard</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        
+        
+        
+        
+        <li class="nav-item">
+          <span id="timer" class="navbar-text ms-md-3"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Right after the navbar, so the countdown has its text at the first paint. -->
+    <script src="/static/js/components.64c51e0583a8.js"></script>
+
+    <main id="main">
+    
+    
+
+<div id="content" class="container" data-loading x-data="dashboardApp()">
+  
+
+  <!-- mx-0: the Bootstrap 3 layout had no .row here, keep its spacing -->
+  <div class="row mx-0">
+  <div class="col-lg-9">
+    <h4>Announcements</h4>
+    <div id="dashboard-announcements">
+      <ul>
+        <template x-for="ann in announcements" :key="ann.id">
+          <li>
+            <a href="javascript:void(0)"
+               @click="ann.open = !ann.open"
+               x-text="timeFmt.utc(ann.time) + ': ' + ann.title"></a>
+            <div x-show="ann.open" x-html="renderMarkdown(ann.description)" style="display:none"></div>
+          </li>
+        </template>
+      </ul>
+    </div>
+
+    <div class="btn-group float-end" id="challenge-mode-toggle">
+      <button class="btn btn-xs"
+              :class="mode === 'all' ? 'btn-primary active' : 'btn-light'"
+              @click="setMode('all')">All</button>
+      <button class="btn btn-xs"
+              :class="mode === 'unsolved' ? 'btn-primary active' : 'btn-light'"
+              @click="setMode('unsolved')">Unsolved</button>
+    </div>
+    <h4>Challenges</h4>
+    <div id="dashboard-challenges">
+      <ul id="challenge-list">
+        <template x-for="challenge in filteredChallenges" :key="challenge.id">
+          <li class="challenge-entry"
+              :id="'challenge-id-' + challenge.id"
+              @click="openChallenge(challenge)">
+            <div class="challenge-info">
+              <div class="title">
+                <p>
+                  <span class="tititle" x-text="challenge.name"></span><br>
+                  <span class="tags" x-text="challenge.category"></span><br>
+                  <span class="text-muted small" x-show="!challenge.is_opened">Locked</span>
+                </p>
+              </div>
+            </div>
+            <ul class="flag-list">
+              <li :id="'flag-id-' + challenge.id"
+                  :class="challenge.solved ? 'solved' : (challenge.solved_times ? 'other-solved' : '')"
+                  x-text="challenge.type === 'koh' ? 'KoH' : challenge.score"></li>
+            </ul>
+            <div class="clearfix"></div>
+          </li>
+        </template>
+        <div class="clearfix"></div>
+      </ul>
+    </div>
+
+  </div><!-- .col-lg-9 -->
+
+  <div class="col-lg-3">
+    <h4>Rank</h4>
+    <ul id="mini-scoreboard" class="list-unstyled">
+      <template x-for="team in miniScoreboard" :key="team.id">
+        <li :class="team.id === $store.site.teamId ? 'self' : ''">
+          <span class="team-name" :title="team.name" x-text="team.name"></span>
+          <span class="team-score" x-text="team.score"></span>
+        </li>
+      </template>
+    </ul>
+  </div><!-- .col-lg-3 -->
+  </div><!-- .row -->
+
+
+  <!-- Modal for challenge details -->
+  <div class="modal fade" id="challenge-modal" tabindex="-1" role="dialog"
+       @hidden-bs-modal.dot="onModalHidden()">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-block">
+          
+          <div id="challenge-prompt">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="prompt-welcome">
+              <img class="prompt-logo" src="/static/img/hitcon-ctf_monotone.d81fcb661da5.png" alt="">
+              <div class="prompt-info">
+                <div><strong>HITCONCTF Code</strong> v13.37.1337</div>
+                <div>Orange 666 with max effort · HITCONCTF Max</div>
+                <div class="prompt-path" x-text="promptPath"></div>
+              </div>
+            </div>
+            <div class="prompt-effort">◈ max · ultracode · /effort</div>
+            <div class="prompt-box">
+              <span class="prompt-label">ultracode</span>
+              <span class="prompt-caret">❯</span>
+              <div class="prompt-input">
+                <div class="prompt-goal"><span class="prompt-command">/goal</span> solve this CTF, make no mistake !</div>
+                <div class="prompt-body">
+                  <div class="prompt-pre" x-text="promptHead"></div>
+                  <div class="prompt-markdown" x-show="!promptRaw" x-html="renderMarkdown(promptDescription)"></div>
+                  <div id="challenge-description" class="prompt-pre" x-show="promptRaw" x-text="promptPlainText"></div>
+                  <div>```<span class="prompt-cursor"></span></div>
+                </div>
+              </div>
+              <div class="prompt-actions">
+                <button type="button" id="challenge-copy-prompt" @click="copyPrompt()"
+                        :class="{ copied: promptCopied }" :title="promptCopied ? 'Copied' : 'Copy prompt'" aria-label="Copy prompt">
+                  <!-- Bootstrap Icons copy and check2 (MIT) -->
+                  <svg x-show="!promptCopied" aria-hidden="true" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg>
+                  <svg x-show="promptCopied" aria-hidden="true" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="prompt-status">
+              <span class="prompt-mode">⏵⏵ bypass permissions on</span> (shift+tab to cycle) ·
+              <button type="button" id="challenge-prompt-raw" @click="togglePromptRaw()" :aria-pressed="promptRaw"
+                      x-text="promptRaw ? 'Render' : 'Rendered'">Rendered</button>
+              · ← for agents
+            </div>
+          </div>
+          <div id="challenge-author"
+               x-text="selectedChallenge && selectedChallenge.author ? 'Author: ' + selectedChallenge.author : ''"></div>
+          <div id="challenge-solved_times"
+               x-show="selectedChallenge && !isKoh"
+               x-text="selectedChallenge ? solvedText(selectedChallenge) : ''"></div>
+        </div>
+
+        <div class="modal-header modal-hint"
+             x-show="selectedChallenge && selectedChallenge.hint && selectedChallenge.hint.length">
+          <span id="challenge-hint">
+            <template x-if="selectedChallenge && selectedChallenge.hint">
+              <template x-for="(hint, i) in selectedChallenge.hint" :key="i">
+                <div>
+                  <strong>Hint</strong>
+                  <span class="text-muted float-end"
+                        :data-bs-toggle="contestEnd ? null : 'tooltip'"
+                        :data-bs-placement="contestEnd ? null : 'left'"
+                        :title="contestEnd ? null : hintTimeFull(hint)"
+                        x-text="hintTimeLabel(hint)"></span>
+                  <span x-html="renderMarkdown(hint.content)"></span>
+                </div>
+              </template>
+            </template>
+          </span>
+        </div>
+
+        <div id="challenge-solved-team" class="modal-body"
+             x-show="solvedTeams && solvedTeams.length">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th x-text="isKoh ? 'Score' : 'Submit Time'"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="(log, index) in solvedTeams" :key="log.id">
+                <tr>
+                  <td x-text="index + 1"></td>
+                  <td><a :href="$store.site.teamUrl(log.id)" x-text="log.name"></a></td>
+                  <td x-show="isKoh" x-text="log.score"></td>
+                  <td x-show="!isKoh">
+                    <span :data-bs-toggle="contestEnd ? null : 'tooltip'"
+                          :data-bs-placement="contestEnd ? null : 'right'"
+                          :title="contestEnd ? null : logTimeFull(log)"
+                          x-text="logTimeLabel(log)"></span>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+
+        
+        <div id="challenge-koh-score" class="modal-footer" x-show="isKoh"
+             x-text="selectedChallenge ? 'Your score: ' + (selectedChallenge.koh_score ?? 0) : ''"></div>
+
+        <div class="modal-footer" x-show="selectedChallenge && !isKoh && !contestEnd">
+          <div class="input-group" id="submit-form"
+               x-show="selectedChallenge && !selectedChallenge.solved">
+            <input type="text" class="form-control" id="flag_input"
+                   placeholder="hitcon{.....}"
+                   aria-label="Flag submission input"
+                   x-model="flagInput"
+                   @keyup.enter="submitFlag()">
+            <button class="btn btn-primary" id="flag_submit_button" type="button"
+                    :disabled="submitDisabled" @click="submitFlag()">Submit</button>
+          </div>
+          <div id="solved-message"
+               x-show="selectedChallenge && selectedChallenge.solved">
+            Challenge already solved!
+          </div>
+          <div id="submit-status"
+               x-show="submitVisible"
+               x-text="submitStatus"></div>
+        </div>
+        <div class="modal-footer" x-show="selectedChallenge && contestEnd">
+          <div>Contest is over.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </main>
+    <div id="main-end" hidden></div>
+
+    <hr>
+
+    <footer id="footer">
+  <h4 class="text-muted">&copy; HITCON CTF Team 2026</h4>
+  <p class="text-muted">Contact: ctf2026@hitcon.org</p>
+</footer>
+
+
+    <!-- Alpine.js data-binding (deferred so it runs after full DOM is parsed,
+         picking up x-data / x-for / x-text directives added by page scripts).
+         The `alpine:init` listener registered in components.js fires first. -->
+    <script defer src="/static/js/alpine.min.37bbf94201a7.js"></script>
+
+    <script src="/static/js/bootstrap.bundle.min.fe96f9dd3617.js"></script>
+
+    
+<script src="/static/js/markdown-it.min.b245543af3a9.js"></script>
+<script src="/static/js/dashboard.eb54e28b79e9.js"></script>
+
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9JWWB52RG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9JWWB52RG');
+    </script>
+    
+  </body>
+</html>

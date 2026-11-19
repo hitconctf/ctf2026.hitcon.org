@@ -1,0 +1,236 @@
+[
+  {
+    "id": 40,
+    "title": "HITCON CTF 2026 — Investigation Update",
+    "description": "Thank you all for your patience!\r\n\r\nDuring HITCON CTF 2026, we received reports that some teams may have created additional accounts (sub-accounts) to gain an unfair competitive advantage. As a result, we needed additional time to investigate these reports before finalizing the competition results.\r\n\r\nWe would like to share our findings and the actions we have taken.\r\n\r\n## 1. Drone Battle — Sub-Account Violations\r\n\r\nThe rules of **Drone Battle** explicitly stated that each team was allowed to use only one account.\r\n\r\nHowever, our investigation found clear evidence that:\r\n\r\n- **ForgottenDestiny** was a sub-account of **SuperDiceCodeLovers**.\r\n- **lululala** was a sub-account of **TeamH4C**.\r\n\r\nWe contacted both teams to verify our findings, and **both teams accepted the outcome of our investigation**.\r\n\r\nWe understand that both are large teams with members from diverse backgrounds, and that managing such teams can be challenging. We also appreciate that both teams actively cooperated with our investigation after the competition.\r\n\r\nNevertheless, to uphold the competition rules and ensure fairness for all participants, we regret that we must **disqualify SuperDiceCodeLovers and TeamH4C**.\r\n\r\nAdditionally, during the competition, we received reports that two other accounts, **gyu** and **不知归**, might have been created as sub-accounts to manipulate the results of Drone Battle.\r\n\r\nAlthough we do not have conclusive evidence linking these accounts to any specific teams, our review of the relevant logs and Drone Battle replays revealed behavior that we determined to be detrimental to the fairness of the competition.\r\n\r\nTherefore, we have decided to **disqualify both gyu and 不知归**.\r\n\r\n### KoH Score Adjustments\r\n\r\nFollowing these disqualifications, we have recalculated the Drone Battle King of the Hill (KoH) scores and updated the scoreboard accordingly.\r\n\r\nWe recognize that many teams made strategic decisions during the competition based on the actions of other teams. Replaying all rounds would not necessarily reproduce the same competitive environment or guarantee a fairer outcome.\r\n\r\nAfter careful consideration, we decided to **adjust only the KoH scores rather than rerun the rounds**.\r\n\r\n## 2. VulCreator & VulCreator-Revenge — Instance Limit Violations\r\n\r\nThe challenges **VulCreator** and **VulCreator-Revenge** had instance limits of **10 and 3**, respectively.\r\n\r\nAlthough the challenge rules did not explicitly state that each team could only use one account, we believe that using sub-accounts to bypass these limits violates the principle of fair competition.\r\n\r\nThese limits were intentionally established as part of the challenge design, and circumventing them through additional accounts provides an unfair advantage over teams that followed the intended restrictions.\r\n\r\nAfter reviewing the relevant logs, we found clear evidence that **SaturnX** and **熊貓特戰隊** used additional accounts to obtain instances beyond the specified limits.\r\n\r\nAs a result, we have decided to revoke the following points:\r\n\r\n- **SaturnX:** Points earned on both **VulCreator** and **VulCreator-Revenge**.\r\n- **熊貓特戰隊:** Points earned on **VulCreator**.\r\n\r\nThese adjustments have also been reflected on the scoreboard.\r\n\r\n## 3. Investigation of Overlapping IP Addresses\r\n\r\nDuring our investigation, we also identified several teams whose activities originated from overlapping IP addresses.\r\n\r\nWe contacted the teams involved to request clarification and have since received reasonable explanations for these overlaps.\r\n\r\nWe would like to thank all the teams who promptly responded to our inquiries and actively cooperated with our investigation. Your cooperation helped us better understand the circumstances and complete our review.\r\n\r\n## 4. Scoreboard Adjustments\r\n\r\nIn addition to the adjustments mentioned above, **the scores for all Jeopardy challenges have been recalculated after excluding disqualified teams from the scoring calculations**.\r\n\r\nThe scoreboard has been updated to reflect these changes.",
+    "time": 1793805304.733637
+  },
+  {
+    "id": 39,
+    "title": "HITCON CTF 2026 Has Ended!",
+    "description": "# 🏁 HITCON CTF 2026 Has Ended!\r\n\r\n**HITCON CTF 2026 has officially come to an end!** 🎉\r\n\r\nThank you all for participating! We hope you enjoyed the challenges and had a great time hacking with us.\r\n\r\n**📢 Final Rankings and Results**\r\n\r\nPlease note that some challenge scores are still under review, so **the current scoreboard rankings are not yet final and may be subject to change**.\r\n\r\nOnce the scores have been verified, we will announce the official final results and contact the winning teams to request their write-ups.\r\n\r\nThank you for your patience and understanding!\r\n\r\nOnce again, thank you for being part of HITCON CTF 2026. We hope to see you again next year!\r\n\r\n— HITCON CTF Team",
+    "time": 1792936868.848569
+  },
+  {
+    "id": 38,
+    "title": "Team 熊貓特戰隊 and SaturnX, please open a ticket in Discord channel",
+    "description": "Team 熊貓特戰隊 and SaturnX, please open a ticket in Discord channel",
+    "time": 1792859928.894089
+  },
+  {
+    "id": 37,
+    "title": "HITCON CTF 2026 Feedback",
+    "description": "Here we would like to invite you to fill the feedback form. You may answer the form in English or Mandarin. 你可以使用中文或英文填寫本問卷。\r\n\r\nhttps://forms.gle/6bFCQ6bB8uncxJtP7\r\n\r\nThank you for participating in HITCON CTF 2026",
+    "time": 1792859651.809895
+  },
+  {
+    "id": 36,
+    "title": "First Blood - KORdex solved \"io_urust\"",
+    "description": "Congratulations!",
+    "time": 1792857420.98503
+  },
+  {
+    "id": 35,
+    "title": "First Blood - Korea Hacking Club Alliance solved \"Wiki.js\"",
+    "description": "Congratulations!",
+    "time": 1792855927.227347
+  },
+  {
+    "id": 34,
+    "title": "First Blood - KORdex solved \"File Inspector\"",
+    "description": "Congratulations!",
+    "time": 1792855169.670741
+  },
+  {
+    "id": 33,
+    "title": "All challenges has been released. Enjoy and have fun.",
+    "description": "All challenges has been released. Enjoy and have fun.",
+    "time": 1792854833.976348
+  },
+  {
+    "id": 32,
+    "title": "First Blood - Nutty5hell solved \"Will be there OSINT?\"",
+    "description": "Congratulations!",
+    "time": 1792854769.97262
+  },
+  {
+    "id": 31,
+    "title": "New Challenges Released",
+    "description": "- Will be there OSINT?\r\n- io_urust\r\n- php2shell (real)",
+    "time": 1792854457.473557
+  },
+  {
+    "id": 30,
+    "title": "First Blood - TeamH4C solved \"Repo Cassette\"",
+    "description": "Congratulations!",
+    "time": 1792851805.552899
+  },
+  {
+    "id": 29,
+    "title": "First Blood - TeamH4C solved \"Secret Notes Revenge\"",
+    "description": "Congratulations!",
+    "time": 1792851107.828432
+  },
+  {
+    "id": 28,
+    "title": "First Blood - TeamH4C solved \"oct\"",
+    "description": "Congratulations!",
+    "time": 1792851088.01384
+  },
+  {
+    "id": 27,
+    "title": "First Blood - TeamH4C solved \"lazy-maze\"",
+    "description": "Congratulations!",
+    "time": 1792851040.464148
+  },
+  {
+    "id": 26,
+    "title": "First Blood - KORdex solved \"RESEARCH.md\"",
+    "description": "Congratulations!",
+    "time": 1792851013.708637
+  },
+  {
+    "id": 25,
+    "title": "First Blood - KORdex solved \"VoteMe\"",
+    "description": "Congratulations!",
+    "time": 1792850947.378398
+  },
+  {
+    "id": 24,
+    "title": "Schedule Update: Possible Additional Challenge Release",
+    "description": "Although our previously announced schedule indicated that the 24-hour mark would be the final challenge release, due to some circumstances, **there may be one more batch of challenges released at the 25-hour mark**.\r\n\r\nWe will confirm whether there will be an additional release at **15:00 UTC on October 24, 2026**.\r\n\r\nStay tuned, and happy hacking! 🚩\r\n\r\n— HITCON CTF Team",
+    "time": 1792850893.827291
+  },
+  {
+    "id": 23,
+    "title": "New Challenges Released",
+    "description": "- secret-notes revenge\r\n- Repo Cassette\r\n- file-inspector (toybox)\r\n- yaju-os \r\n- VoteMe\r\n- lazy_maze\r\n- oct\r\n- WIKI\r\n- RESEARCH.md\r\n- mathclipse ΔΔ",
+    "time": 1792850842.507273
+  },
+  {
+    "id": 22,
+    "title": "First Blood - Nol3ptr solved \"My IOT homework_new folder（1）_ver.114514(final）\"",
+    "description": "Congratulations!",
+    "time": 1792850732.139913
+  },
+  {
+    "id": 21,
+    "title": "First Blood - Nutty5hell solved \"mathclipse ΔΔ\"",
+    "description": "Congratulations!",
+    "time": 1792850592.363243
+  },
+  {
+    "id": 20,
+    "title": "First Blood - TeamH4C solved \"Works on My Machine\"",
+    "description": "Congratulations!",
+    "time": 1792808728.985568
+  },
+  {
+    "id": 19,
+    "title": "First Blood - TeamH4C solved \"flag.png\"",
+    "description": "Congratulations!",
+    "time": 1792808472.908546
+  },
+  {
+    "id": 18,
+    "title": "First Blood - TeamH4C solved \"litter\"",
+    "description": "Congratulations!",
+    "time": 1792808466.346759
+  },
+  {
+    "id": 17,
+    "title": "First Blood - TeamH4C solved \"Book of Eclipse\"",
+    "description": "Congratulations!",
+    "time": 1792807813.073496
+  },
+  {
+    "id": 16,
+    "title": "First Blood - TeamH4C solved \"mathclipse Δ\"",
+    "description": "Congratulations!",
+    "time": 1792807802.067041
+  },
+  {
+    "id": 15,
+    "title": "First Blood - TeamH4C solved \"v8ackup\"",
+    "description": "Congratulations!",
+    "time": 1792807615.682695
+  },
+  {
+    "id": 14,
+    "title": "New Challenge Released",
+    "description": "- v8ackup\r\n- Book of Eclipse\r\n- mathclipse Δ\r\n- flag.png\r\n- Works on My Machine\r\n- litter\r\n- Drone Battle",
+    "time": 1792807580.708233
+  },
+  {
+    "id": 13,
+    "title": "First Blood - BunkyoWesterns solved \"vulcreator revenge\"",
+    "description": "Congratulations!",
+    "time": 1792789297.95283
+  },
+  {
+    "id": 12,
+    "title": "New Challenge Dropped: VulCreator Revenge",
+    "description": "Keep in mind, the max attempt is **reduced to 3**\r\n\r\nThe previous challenge's base image is tainted.\r\nWe make sure the environment is clean this time.\r\n\r\nIf you are using intended solve, you should be able to solve both.\r\n\r\n> We strongly recommend that players set up their own Windows environment and successfully reproduce their exploits locally before attempting them on our platform.",
+    "time": 1792787584.457865
+  },
+  {
+    "id": 10,
+    "title": "First Blood - TeamH4C solved \"FastColl\"",
+    "description": "Congratulations!",
+    "time": 1792779524.752789
+  },
+  {
+    "id": 9,
+    "title": "First Blood - KORdex solved \"vulcreator\"",
+    "description": "Congratulations!",
+    "time": 1792768663.985711
+  },
+  {
+    "id": 8,
+    "title": "First Blood - TeamH4C solved \"Site Preview\"",
+    "description": "Congratulations!",
+    "time": 1792768557.900464
+  },
+  {
+    "id": 7,
+    "title": "First Blood - TeamH4C solved \"You Got Calc'd?\"",
+    "description": "Congratulations!",
+    "time": 1792767035.097586
+  },
+  {
+    "id": 6,
+    "title": "First Blood - TeamH4C solved \"SPI TPM\"",
+    "description": "Congratulations!",
+    "time": 1792765705.055393
+  },
+  {
+    "id": 5,
+    "title": "First Blood - TeamH4C solved \"Night Shift Archive\"",
+    "description": "Congratulations!",
+    "time": 1792765632.219994
+  },
+  {
+    "id": 4,
+    "title": "First Blood - TeamH4C solved \"SPI TPM Free Trial\"",
+    "description": "Congratulations!",
+    "time": 1792764672.275845
+  },
+  {
+    "id": 3,
+    "title": "First Blood - TeamH4C solved \"mathclipse\"",
+    "description": "Congratulations!",
+    "time": 1792764468.604869
+  },
+  {
+    "id": 2,
+    "title": "Challenge Release Schedule",
+    "description": "# 🚩 HITCON CTF 2026 Has Begun!\r\n\r\nWelcome to **HITCON CTF 2026**! 🎉\r\n\r\nThe competition has officially started! We hope you enjoy the challenges we've prepared and have a great time hacking. Good luck, have fun, and happy hacking!\r\n\r\n**📢 Upcoming Challenge Releases**\r\n\r\nMore challenges will be released in two additional batches:\r\n\r\n- **12 hours after the start:** October 24, 2026, at 02:00 UTC\r\n- **24 hours after the start:** October 24, 2026, at 14:00 UTC\r\n\r\n**👑 King of the Hill (KotH)**\r\n\r\nWe also have a **King of the Hill** challenge coming up!\r\n\r\n- **Expected start:** October 24, 2026, at 02:00 UTC (12 hours after the competition begins)\r\n- **Expected end:** October 25, 2026, at 14:00 UTC (competition ends)\r\n\r\nThe KotH challenge is expected to remain active until the end of the competition. Stay tuned for more details!\r\n\r\nThank you all for participating in HITCON CTF 2026. We hope you have an amazing 48 hours!\r\n\r\n**Happy hacking! 🔥**\r\n\r\n— HITCON CTF Team",
+    "time": 1792764097.978865
+  },
+  {
+    "id": 1,
+    "title": "First Blood - D0kdo solved \"Welcome\"",
+    "description": "Congratulations!",
+    "time": 1792764019.225901
+  }
+]

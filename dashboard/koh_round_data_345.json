@@ -1,0 +1,211 @@
+{
+  "current_round": 432,
+  "latest_round": 432,
+  "round": 345,
+  "challenges": [
+    {
+      "id": 15,
+      "name": "Drone Battle"
+    }
+  ],
+  "teams": [
+    {
+      "id": 587,
+      "name": "H5X",
+      "flag_css": "flag-sprite flag-i flag-_n",
+      "country_name": "India",
+      "scores": {
+        "15": 5
+      }
+    },
+    {
+      "id": 25,
+      "name": "Korea Hacking Club Alliance",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 4
+      }
+    },
+    {
+      "id": 308,
+      "name": "CSG",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 4
+      }
+    },
+    {
+      "id": 257,
+      "name": "qwerty fan club",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 325,
+      "name": "D0kdo",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 351,
+      "name": "krauq",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 473,
+      "name": "SWV",
+      "flag_css": "flag-sprite flag-l flag-_v",
+      "country_name": "Latvia",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 490,
+      "name": "竹狐",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 522,
+      "name": "ChiLL Chain",
+      "flag_css": "flag-sprite flag-u flag-_z",
+      "country_name": "Uzbekistan",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 548,
+      "name": "Cow Pig",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 613,
+      "name": "v1olet",
+      "flag_css": "",
+      "country_name": "",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 722,
+      "name": "UIT-Wanna.W1n",
+      "flag_css": "flag-sprite flag-v flag-_n",
+      "country_name": "Vietnam",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 885,
+      "name": "SaturnX",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 56,
+      "name": "Hwalbin",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 165,
+      "name": "W4llz",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 205,
+      "name": "Friday Night",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 448,
+      "name": "milworms",
+      "flag_css": "flag-sprite flag-u flag-_a",
+      "country_name": "Ukraine",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 578,
+      "name": "HackerS1r1ab",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 1068,
+      "name": "bi0s",
+      "flag_css": "flag-sprite flag-i flag-_n",
+      "country_name": "India",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 1070,
+      "name": "BB!D",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 1090,
+      "name": "Kn1ghts",
+      "flag_css": "flag-sprite flag-i flag-_n",
+      "country_name": "India",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 1136,
+      "name": "0",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    }
+  ]
+}

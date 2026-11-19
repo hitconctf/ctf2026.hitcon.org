@@ -1,8 +1,252 @@
+/* Web fonts (SIL Open Font License), served from this site. Files are the
+   Google Fonts latin and latin-ext subsets; the browser loads only the subsets
+   the page uses. */
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-display: block;
+  src: url('../fonts/roboto-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-display: block;
+  src: url('../fonts/roboto-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Aldrich';
+  font-weight: 400;
+  font-display: block;
+  src: url('../fonts/aldrich-latin.woff2') format('woff2');
+}
+
+/* Bootstrap 5 dark theme, tuned to the colors of the original Bootstrap 3
+   build: background #222, text #ccc, links and primary #428bca, 2px radius. */
+:root {
+  font-size: 14px;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #222;
+  --bs-body-bg-rgb: 34, 34, 34;
+  --bs-body-color: #ccc;
+  --bs-body-color-rgb: 204, 204, 204;
+  --bs-body-line-height: 1.42857143;
+  --bs-secondary-color: #777;
+  --bs-link-color: #428bca;
+  --bs-link-color-rgb: 66, 139, 202;
+  --bs-link-hover-color: #2a6496;
+  --bs-link-hover-color-rgb: 42, 100, 150;
+  --bs-primary: #428bca;
+  --bs-primary-rgb: 66, 139, 202;
+  --bs-border-radius: 2px;
+  --bs-border-radius-sm: 2px;
+  --bs-border-radius-lg: 2px;
+  --bs-code-color: #ddd;
+}
+
+.btn-primary {
+  --bs-btn-bg: #428bca;
+  --bs-btn-border-color: #357ebd;
+  --bs-btn-hover-bg: #3071a9;
+  --bs-btn-hover-border-color: #285e8e;
+  --bs-btn-active-bg: #3071a9;
+  --bs-btn-active-border-color: #285e8e;
+  --bs-btn-disabled-bg: #428bca;
+  --bs-btn-disabled-border-color: #357ebd;
+}
+
+/* Bootstrap 3 heading sizes and margins; the layout depends on them. */
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h1, h2, h3 { margin-top: 20px; margin-bottom: 10px; }
+h4, h5, h6 { margin-top: 10px; margin-bottom: 10px; }
+
+/* Bootstrap 3 links: underline on hover only. */
+a { text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+hr {
+  margin: 20px 0;
+  border-top: 1px solid #666;
+  opacity: 1;
+}
+
+code {
+  padding: 1px 4px;
+  font-size: 85%;
+  background-color: #3e3e3e;
+  border-radius: 0;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-striped-bg: #313131;
+  --bs-table-striped-color: var(--bs-body-color);
+  --bs-table-hover-color: var(--bs-body-color);
+  --bs-table-border-color: #161616;
+}
+
+/* ---------------------------------------------------------------------
+   Bootstrap 3 sizes and colors that Bootstrap 5 changed. Measured on the
+   Bootstrap 3 version so the pages keep their layout.
+   --------------------------------------------------------------------- */
+
+/* Container widths 750 / 970 / 1170 px and 30 px gutters. */
+.container { max-width: none; }
+@media (min-width: 768px)  { .container { max-width: 750px; } }
+@media (min-width: 992px)  { .container { max-width: 970px; } }
+@media (min-width: 1200px) { .container { max-width: 1170px; } }
+.container, .container-fluid, .row { --bs-gutter-x: 30px; }
+
+/* Navbar: 50 px high, gray links that turn white on hover. */
+#top-nav.navbar { padding-top: 0; padding-bottom: 0; min-height: 50px; }
+#top-nav .navbar-brand { color: #9d9d9d; font-size: 18px; line-height: 20px; padding: 15px 0; }
+#top-nav .nav-link, #top-nav #timer { color: #9d9d9d; }
+#top-nav #timer { display: inline-block; padding: 15px 0; line-height: 20px; }
+#top-nav .navbar-brand:hover, #top-nav .nav-link:hover, #top-nav .nav-link:focus { color: #fff; }
+@media (min-width: 768px) {
+  #top-nav .navbar-nav .nav-link { padding: 15px; }
+}
+
+/* Modal 600 px wide, 15 px padding. */
+.modal { --bs-modal-width: 600px; --bs-modal-padding: 15px; --bs-modal-header-padding: 15px; }
+
+/* btn-xs (removed in Bootstrap 4). */
+.btn-xs {
+  --bs-btn-padding-y: 1px;
+  --bs-btn-padding-x: 5px;
+  --bs-btn-font-size: 12px;
+  --bs-btn-line-height: 1.5;
+}
+
+/* Table cells: 8 px (5 px for .table-sm), 2 px line under the header. */
+.table > :not(caption) > * > * { padding: 8px; }
+.table-sm > :not(caption) > * > * { padding: 5px; }
+.table > thead > tr > th { border-bottom-width: 2px; }
+
+/* Light form controls on the dark page, as in Bootstrap 3. */
+.form-control, .form-select {
+  background-color: #fff;
+  color: #555;
+  border-color: #ccc;
+}
+.form-control:focus, .form-select:focus {
+  background-color: #fff;
+  color: #555;
+  border-color: #66afe9;
+}
+.form-control::placeholder { color: #999; }
+label { font-weight: 700; }
+
+.text-warning { color: #8a6d3b !important; }
+
+/* Bootstrap 3 text rhythm: 10 px after blocks, tighter headings. */
+p, ul, ol, dl { margin-bottom: 10px; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.1; }
+
+/* Bootstrap 3 columns are positioned, so absolute children stay inside. */
+[class*="col-"] { position: relative; }
+/* Bootstrap 5 pads only columns inside .row; Bootstrap 3 padded all. */
+.container > [class*="col-"] { padding-left: 15px; padding-right: 15px; }
+
+/* Tables sit on a slightly lighter panel. */
+.table { background-color: #2a2a2a; margin-bottom: 20px; }
+
+/* Link-styled buttons look like links. */
+.btn-link { text-decoration: none; }
+.btn-link:hover, .btn-link:focus { text-decoration: underline; }
+
+/* Read-only fields, e.g. the team name on the profile form. */
+.form-control:disabled, .form-control[readonly] {
+  background-color: #eee;
+  color: #777;
+}
+
+/* Logout is a form button that looks like the other navbar links. */
+#navlogout { background: none; border: 0; }
+
+/* Navbar items stay on one line; a long team name ends with "…". */
+#top-nav .nav-link,
+#top-nav .navbar-text { white-space: nowrap; }
+@media (min-width: 768px) {
+  #top-nav .nav-team {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 1200px) {
+  #top-nav .nav-team { max-width: 240px; }
+}
+
+/* Mobile menu button: 3 white bars in a dark frame. */
+#top-nav .navbar-toggler {
+  padding: 9px 10px;
+  border-color: #333;
+  border-radius: 2px;
+}
+#top-nav .navbar-toggler:focus { box-shadow: none; }
+#top-nav .navbar-toggler-icon {
+  width: 22px;
+  height: 14px;
+  background-size: 22px 14px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3e%3cpath stroke='%23fff' stroke-width='2' d='M0 1h22M0 7h22M0 13h22'/%3e%3c/svg%3e");
+}
+
+/* Home page sponsors: logos of the same height in one tidy row. */
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  min-height: 80px;
+  padding: 10px 0 10px 15px;
+}
+.sponsor-logos img {
+  display: block;
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+}
+.sponsor-logos img.logo-wide { height: 36px; }
+
+/* Light alerts, as in Bootstrap 3. */
+.alert { padding: 15px; margin-bottom: 20px; }
+.alert > p:last-child, .alert > ul:last-child { margin-bottom: 0; }
+.alert-info    { --bs-alert-bg: #d9edf7; --bs-alert-color: #31708f; --bs-alert-border-color: #bce8f1; --bs-alert-link-color: #245269; }
+.alert-success { --bs-alert-bg: #dff0d8; --bs-alert-color: #3c763d; --bs-alert-border-color: #d6e9c6; --bs-alert-link-color: #2b542c; }
+.alert-warning { --bs-alert-bg: #fcf8e3; --bs-alert-color: #8a6d3b; --bs-alert-border-color: #faebcc; --bs-alert-link-color: #66512c; }
+.alert-danger  { --bs-alert-bg: #f2dede; --bs-alert-color: #a94442; --bs-alert-border-color: #ebccd1; --bs-alert-link-color: #843534; }
+
 
 body {
   font-family: 'Roboto', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   padding-top: 50px;
   padding-bottom: 20px;
+  /* Sticky footer: #main takes the free height, so the footer stays at the
+     bottom of the screen on short pages. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* <html> paints #222 (base.html). A body background would cover
+     #home-bg, which has z-index -1. */
+  background-color: transparent;
+}
+#main { flex: 1 0 auto; }
+
+/* Pages that load their data with fetch (dashboard, scoreboard) stay hidden
+   until the first data arrives, then fade in at once. */
+#content { transition: opacity 0.1s ease-out; }
+#content[data-loading] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  #content { transition: none; }
 }
 
 h1,
@@ -17,11 +261,11 @@ h4,
 }
 
 #top-nav {
-  border-width: 0 0 2px;
-  border-color: #444;
+  background-color: #222;
+  border-bottom: 2px solid #444;
 }
 
-#particles-js {
+#home-bg {
   position: absolute;
   width: 100%;
   height: 400px;
@@ -29,17 +273,15 @@ h4,
   background-color: #111;
 }
 
-@media (max-width: 768px) {
-  #particles-js {
-    height: 400px;
-  }
-}
 @media (max-width: 668px) {
-  #particles-js {
+  #home-bg {
     height: 500px;
   }
 }
 
+
+/* The home page content moves up onto the masthead background. */
+#home-masthead + #content { transform: translate(0, -120px); }
 
 #home-masthead {
   padding: 100px 0;
@@ -136,20 +378,6 @@ h4,
   text-align: center;
 }
 
-.challenge-entry.locked div {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.challenge-entry.locked div p {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 80px;
-  color: #888;
-}
-
 .challenge-info .title {
   display: table;
   height: 100%;
@@ -193,6 +421,67 @@ h4,
   padding-top: 5%;
 }
 
+/* Register page: "one account per team", in the form-panel style. Near the
+   top like a browser alert, over the lower half of the navbar links. */
+#one-account-modal .modal-dialog {
+  max-width: 460px;
+  padding-top: 0;
+  margin-top: 25px;
+}
+#one-account-modal .modal-content {
+  padding: 30px;
+  text-align: center;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-top: 3px solid #428bca;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+#one-account-modal .one-account-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  color: #428bca;
+  background-color: rgba(66, 139, 202, 0.15);
+  border-radius: 50%;
+}
+#one-account-modal h4 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#one-account-modal .one-account-lead {
+  margin-bottom: 8px;
+  color: #eee;
+  font-size: 15px;
+}
+#one-account-modal .one-account-note {
+  margin-bottom: 24px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#one-account-modal .btn-submit {
+  width: 100%;
+  height: 42px;
+  font-family: 'Aldrich', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  #one-account-modal .modal-content { padding: 20px; }
+  #one-account-modal h4 { font-size: 17px; letter-spacing: 1px; }
+}
+
+/* Faster modal open and close (Bootstrap: slide 0.3s, fade 0.15s). */
+.modal.fade .modal-dialog { transition-duration: 0.15s; }
+.modal.fade,
+.modal-backdrop.fade { transition-duration: 0.1s; }
+
 .modal-content {
   position: relative;
   background-color: #252525;
@@ -200,13 +489,143 @@ h4,
   border-radius: 2px;
 }
 
+/* Block layout, without the !important of d-block: x-show must be able to
+   hide the hints when a challenge has none. */
+.modal-header.modal-hint { display: block; }
+
 .modal-header, .modal-footer {
   border-color: #111;
 }
 
-#challenge-description {
-  margin-bottom: 50px;
+/* Bootstrap 3 modal footer: block layout, right-aligned (Bootstrap 5 uses flex). */
+#challenge-modal .modal-footer {
+  display: block;
+  text-align: right;
+  padding: 15px;
 }
+/* Bootstrap 5 adds a margin to every footer child; Bootstrap 3 did not. */
+#challenge-modal .modal-footer > * { margin: 0; }
+
+/* The challenge as a prompt in a Claude Code look-alike: the start screen
+   with the HITCON logo, the input between two lines, the status line, a copy icon. */
+#challenge-prompt {
+  position: relative;
+  margin-bottom: 12px;
+  padding: 16px 0 10px;
+  color: #ddd;
+  font-family: SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* The modal has no title bar: close it from the top-right corner of the block. */
+#challenge-prompt > .btn-close { position: absolute; top: 12px; right: 12px; font-size: 10px; }
+
+#challenge-prompt .prompt-welcome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 14px;
+  margin-bottom: 64px;
+}
+/* As high as the three lines next to it. */
+#challenge-prompt .prompt-logo { flex: none; width: 4.8em; height: 4.8em; }
+#challenge-prompt .prompt-info { min-width: 0; color: #999; }
+#challenge-prompt .prompt-info > div { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#challenge-prompt .prompt-info strong { color: #5ea3e0; }
+#challenge-prompt .prompt-path { color: #eee; font-weight: bold; }
+
+#challenge-prompt .prompt-box {
+  position: relative;
+  display: flex;
+  gap: 1ch;
+  padding: 10px 40px 10px 14px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+
+/* The effort above the input, the mode label on its top line. */
+#challenge-prompt .prompt-effort { padding: 0 calc(14px + 1ch) 10px 14px; color: #999; text-align: right; }
+#challenge-prompt .prompt-label {
+  position: absolute;
+  top: -0.8em;
+  right: 14px;
+  padding: 0 1ch;
+  color: #af87ff;
+  line-height: 1.6;
+  background-color: #1e1e1e;
+}
+
+#challenge-prompt .prompt-caret { flex: none; color: #eee; }
+#challenge-prompt .prompt-input { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+#challenge-prompt .prompt-command { color: #b1b9f9; }
+#challenge-prompt .prompt-pre { white-space: pre-wrap; }
+
+/* The rendered description, in the colors of the CLI. A blank line of the
+   source is one line high, as in the plain text, so the lines stay in place
+   on a switch. A code block has one line above and below for its ``` lines. */
+#challenge-prompt .prompt-markdown > * { margin: 0 0 1.6em; }
+#challenge-prompt .prompt-markdown > :last-child { margin-bottom: 0; }
+#challenge-prompt .prompt-markdown code { padding: 0; color: #e8a86b; font-size: inherit; background: none; }
+#challenge-prompt .prompt-markdown pre { padding: 1.6em 0; color: #e8a86b; font-size: inherit; line-height: inherit; background: none; }
+#challenge-prompt .prompt-markdown h1,
+#challenge-prompt .prompt-markdown h2,
+#challenge-prompt .prompt-markdown h3 { font-size: inherit; font-weight: bold; line-height: inherit; }
+#challenge-prompt .prompt-markdown ul,
+#challenge-prompt .prompt-markdown ol { padding-left: 2ch; }
+#challenge-prompt .prompt-markdown li > p { margin: 0; }
+
+/* The text cursor of the input box. */
+#challenge-prompt .prompt-cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 1.2em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background-color: #ccc;
+  animation: prompt-blink 1s steps(1) infinite;
+}
+@keyframes prompt-blink { 50% { opacity: 0; } }
+
+/* The status line of Claude Code. */
+#challenge-prompt .prompt-status {
+  padding: 6px 14px 0;
+  color: #aaa;
+}
+#challenge-prompt .prompt-mode { color: #f06e83; }
+
+/* The plain text switch, like a background task in the status line. */
+#challenge-prompt-raw {
+  padding: 0;
+  color: #5fcfcf;
+  font: inherit;
+  background: none;
+  border: 0;
+}
+#challenge-prompt-raw:hover,
+#challenge-prompt-raw:focus-visible { color: #1e1e1e; background-color: #5fcfcf; outline: none; }
+
+/* The copy icon, top-right in the input. */
+#challenge-prompt .prompt-actions {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  display: flex;
+  gap: 2px;
+}
+#challenge-prompt .prompt-actions button {
+  display: flex;
+  padding: 5px;
+  color: #777;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+}
+#challenge-prompt .prompt-actions button:hover { color: #ddd; background-color: #333; }
+#challenge-copy-prompt.copied { color: #5cb85c; }
 
 #challenge-solved_times {
   margin-top: 5px;
@@ -225,12 +644,25 @@ h4,
   table-layout: fixed;
 }
 
+/* One line per team: a long name ends with "…", the score stays right. */
 #mini-scoreboard li {
+  display: flex;
+  gap: 12px;
+  padding: 0 5px;
   font-size: 1.15em;
 }
 
-#mini-scoreboard span {
-  margin: 0 5px;
+#mini-scoreboard .team-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#mini-scoreboard .team-score {
+  flex: none;
+  font-variant-numeric: tabular-nums;
 }
 
 #mini-scoreboard .self {
@@ -260,6 +692,11 @@ h4,
   background-color: #555 !important;
 }
 
+/* The first team to solve a challenge. */
+#scoreboard .solved.first-blood {
+  background-color: #8a6d3b !important;
+}
+
 #scoreboard .team-url, 
 #scoreboard .team-url:hover, 
 #scoreboard .team-url:active, 
@@ -282,6 +719,10 @@ h4,
   z-index: 10;
 }
 
+/* Center the flag icon over its column of solved cells. */
+#scoreboard th.flag, #scoreboard td.chal-cell { text-align: center; }
+#scoreboard .show-on-hover.flag div { left: 50%; transform: translateX(-50%); text-align: center; }
+
 #scoreboard .show-on-hover.flag div {
   top: -2.8em;
 }
@@ -290,27 +731,6 @@ h4,
   font-size: 0.8em;
 }
 
-
-/* trend */
-
-#trend {
-  width: 100%;
-  height: 500px;
-}
-#trend_tooltip {
-  position: absolute;
-  display: none;
-  border: 3px solid black;
-  background-color: white;
-  opacity: 0.8;
-  padding: 3px;
-  color: blue;
-}
-
-#message-area{
-  padding-top: 30px;
-  widows: 100%;
-}
 
 #challenge-solved-team .table {
   background-color: #252525; 
@@ -325,10 +745,6 @@ h4,
   text-decoration: underline;
 }
 
-#modal-hint {
-  text-align: left!important;
-}
-
 pre {
   background-color: #161616;
 	padding: 0;
@@ -337,45 +753,239 @@ pre {
 	border-radius: 0;
 }
 
-code {
-  padding: 1px 4px;
-  font-size: 85%;
-  border-radius: 0;
-}
 
 .score-table-simple tbody > tr {
   cursor: pointer!important;
 }
 
-.help-block {
+.form-text {
   margin-bottom: 0;
   color: #777;
 }
 
-#awards {
-  border-radius: 1rem;
+#awards-final {
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 15px #111;
-  padding: 0 3rem 1rem 3rem;
-  margin-bottom: 3rem;
+  /* 15px, not 30px: the Bootstrap 5 container is 30px narrower than the
+     Bootstrap 3 one, and "+ Pre-qualification for DEF CON" must fit on the
+     first line of the 1st place note, as in 2024. */
+  padding: 0 15px 10px 15px;
+  margin-bottom: 30px;
 }
 
-#awards .award {
-  margin: 1rem;
+#awards-final .award {
+  margin: 10px;
   display: inline-block;
 }
 
-#awards .award-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+#awards-final .award-title {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-#awards .award-content {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+#awards-final .award-content {
+  font-size: 25px;
+  margin-bottom: 5px;
 }
 
 #flag_submit_button {
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
+/* Scoreboard KoH tab: a small dark round picker, like the mode buttons. */
+.koh-round-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.koh-round-picker label {
+  font-weight: normal;
+  color: #999;
+  margin: 0;
+}
+.koh-round-picker .form-select {
+  width: auto;
+  height: 28px;
+  padding: 2px 32px 2px 10px;
+  font-size: 13px;
+  background-color: #1b1b1b;
+  color: #ddd;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+}
+.koh-round-picker .form-select:focus {
+  background-color: #1b1b1b;
+  color: #fff;
+  border-color: #428bca;
+  box-shadow: none;
+}
+
+/* Keep the heading margin inside the dark awards box. */
+#awards-final { display: flow-root; }
+
+/* Below xl the home sections stack in one column. Use block layout so the
+   margins between sections collapse, as in Bootstrap 3. */
+@media (max-width: 1199.98px) {
+  #contest-info.row { display: block; }
+}
+
+/* Smaller logos on phones, so a pair of logos fits on one line. */
+@media (max-width: 575.98px) {
+  .sponsor-logos { gap: 16px 20px; padding-left: 0; }
+  .sponsor-logos img { height: 40px; }
+  .sponsor-logos img.logo-wide { height: 28px; }
+}
+
+/* Narrower table cells on phones, so 5-column tables fit the screen. */
+@media (max-width: 575.98px) {
+  .table > :not(caption) > * > * { padding-left: 5px; padding-right: 5px; }
+}
+
+/* Long links (e.g. the Discord URL) wrap on narrow phones. */
+#home-masthead a { overflow-wrap: anywhere; }
+/* table-responsive wraps the table; keep the table's own bottom margin. */
+.table-responsive { margin-bottom: 20px; }
+.table-responsive > .table { margin-bottom: 0; }
+
+/* Messages after a form (django.contrib.messages), above the page.
+   460px wide inside the 15px gutters, the same as the form panel. */
+.site-messages { max-width: 490px; padding-top: 20px; }
+.site-messages .alert { margin-bottom: 0; }
+.site-messages .alert + .alert { margin-top: 10px; }
+
+/* Team forms (login, register, password, profile): one centered panel. */
+.form-panel {
+  max-width: 460px;
+  margin: 10px auto 0;
+  padding: 30px;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 0 15px #111;
+}
+.form-panel-wide { max-width: 560px; }
+.form-panel h4 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+.form-panel-note {
+  margin-bottom: 24px;
+  color: #888;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.form-panel .mb-3 { margin-bottom: 18px !important; }
+.form-panel .form-label {
+  margin-bottom: 6px;
+  color: #bbb;
+  font-size: 13px;
+  font-weight: 500;
+}
+.form-panel .asteriskField { margin-left: 2px; color: #428bca; }
+.form-panel .form-control,
+.form-panel .form-select {
+  height: 40px;
+  padding: 8px 12px;
+  background-color: #1b1b1b;
+  color: #ddd;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+}
+.form-panel .form-control:focus,
+.form-panel .form-select:focus {
+  background-color: #1b1b1b;
+  color: #fff;
+  border-color: #428bca;
+  box-shadow: 0 0 0 3px rgba(66, 139, 202, 0.25);
+}
+.form-panel .form-control.is-invalid { border-color: #a94442; }
+.form-panel .form-control[readonly] { background-color: #262626; color: #888; }
+.form-panel .form-text { margin-top: 6px; color: #777; font-size: 12px; }
+.form-panel .alert { padding: 10px 12px; font-size: 13px; }
+.form-panel .alert ul { padding-left: 0; list-style: none; }
+.form-panel .btn-submit {
+  width: 100%;
+  height: 42px;
+  margin-top: 6px;
+  font-family: 'Aldrich', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.form-panel-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 18px;
+  font-size: 13px;
+}
+.form-panel-alt {
+  margin: 18px 0 0;
+  color: #888;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .form-panel { padding: 20px; }
+}
+
+/* Select boxes are clickable. */
+.form-select { cursor: pointer; }
+
+/* Country picker (country-select.js): a dropdown in the form-panel theme. */
+.cselect { position: relative; }
+.cselect-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+}
+.cselect-toggle[aria-expanded="true"] {
+  border-color: #428bca !important;
+  box-shadow: 0 0 0 3px rgba(66, 139, 202, 0.25);
+}
+.cselect-placeholder { color: #777; }
+/* Same look before country-select.js replaces the <select>. */
+.form-panel select[data-country-select]:has(option[value=""]:checked) { color: #777; }
+.cselect-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 8px;
+  background-color: #1b1b1b;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+.form-panel .cselect-search { height: 34px; margin-bottom: 6px; }
+.cselect-list {
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+.cselect-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 2px;
+  color: #ccc;
+  cursor: pointer;
+}
+.cselect-list li.active { background-color: rgba(66, 139, 202, 0.2); color: #fff; }
+.cselect-list li[aria-selected="true"] { color: #6aa9e0; }
+.cselect-list li[aria-selected="true"]::after { content: "✓"; margin-left: auto; }
+.cselect-list .flag-sprite,
+.cselect-toggle .flag-sprite,
+.cselect-noflag { flex: none; width: 16px; height: 11px; }
+.cselect-noflag { border: 1px dashed #555; }
+.cselect-empty { padding: 7px 10px; color: #777; }

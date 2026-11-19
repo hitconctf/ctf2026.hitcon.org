@@ -1,0 +1,49 @@
+{
+  "current_round": 432,
+  "latest_round": 432,
+  "round": 5,
+  "challenges": [
+    {
+      "id": 15,
+      "name": "Drone Battle"
+    }
+  ],
+  "teams": [
+    {
+      "id": 165,
+      "name": "W4llz",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 5
+      }
+    },
+    {
+      "id": 351,
+      "name": "krauq",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 5
+      }
+    },
+    {
+      "id": 890,
+      "name": "EQST",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 5
+      }
+    },
+    {
+      "id": 1411,
+      "name": "Tara",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 3
+      }
+    }
+  ]
+}

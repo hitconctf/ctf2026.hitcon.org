@@ -1,62 +1,99 @@
 
 <!DOCTYPE html>
-<html lang="">
+<!-- Dark from the first frame: the browser default is white until the CSS
+     loads, which shows as a white flash on a page switch or reload. -->
+<html lang="en" data-bs-theme="dark" style="background-color: #222; color-scheme: dark">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="color-scheme" content="dark">
     <meta name="twitter:card" content="summary"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta name="flag" content="hitcon{HITCON-verse let's gooooooo}">
-    
     <meta property="og:title" content="HITCON CTF 2026"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://ctf2026.hitcon.org"/>
-    <meta property="og:image" content="http://ctf.hitcon.org/img/og_img.png"/>
+    <meta property="og:image" content="https://ctf2026.hitcon.org/static/img/og_img.e05caabe0c32.png"/>
     <meta property="og:site_name" content="HITCON CTF 2026"/>
-    <meta property="og:description" content="Online Jeopardy, Oct 23-25 2026"/>
+    <meta property="og:description" content="Online Jeopardy, Oct 23 - Oct 25 2026 (UTC)"/>
     <title>HITCON CTF 2026</title>
 
-    <link rel="shortcut icon" type="image/png" href="/static/img/hitcon-ctf_monotone.png"/>
-    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="shortcut icon" type="image/png" href="/static/img/hitcon-ctf_monotone.d81fcb661da5.png"/>
+    <!-- Do not paint until the page content is parsed. Chrome keeps showing
+         the old page until then, so a page switch shows no partial page.
+         No page switch fade (view transitions): its snapshot of the old page
+         can be white, e.g. right after Chrome starts. -->
+    <link rel="expect" href="#main-end" blocking="render">
+
+    <!-- Fonts are served from this site and preloaded, so text is ready at the
+         first paint and never blinks in after a page switch. -->
+    <link rel="preload" href="/static/fonts/roboto-latin.f9788110cacc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/aldrich-latin.a7bb3cc8ab44.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.6032a13145bb.css">
+    <link rel="stylesheet" href="/static/css/main.5c2c733bf227.css">
 
     
     
   </head>
   <body>
-    <nav id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">HITCON CTF 2026</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-          <ul class="nav navbar-nav">
-          </ul>
+    <!-- Logout is a POST. The navbar's Logout button submits this form. -->
+    <form id="logoutform" method="post" action="/team/logout" style="display:none">
+      <input type="hidden" name="csrfmiddlewaretoken" value="233fNmG1zBQvlP9AoLunvND01ub6PUhmI8EvC9vLZ5ZnJhoAvIuVuZvzVipOI4GL">
+    </form>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p id="timer" class="navbar-text"></p>
-              <input type="hidden" id="contest_start_time" value="1792764000.0">
-              <input type="hidden" id="contest_end_time" value="1792936800.0">
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <!-- Values for components.js and the page scripts (dashboard.js,
+         scoreboard.js). The navbar and footer are rendered by Django. -->
+    <script>
+      window.__SITE_CONFIG__ = {
+        teamId:           -1,
+        contestStartTime: 1792764000.0,
+        contestEndTime:   1792936800.0,
+        currentTime:      1795099190.0087895,
+        refreshInterval:  30,
+        // Team pages are <teamUrlPrefix><id>.
+        teamUrlPrefix:    '/team/',
+        submitUrl:        '/dashboard/submit_flag',
+        loginUrl:         '/team/login',
+      };
+      // IS_STATIC is overridden to true in pre-generated static exports.
+      var IS_STATIC = true;
+    </script>
 
-      
-<div id="particles-js">
+    <nav id="top-nav" class="navbar navbar-expand-md fixed-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="/">HITCON CTF 2026</a>
+    <button type="button" class="navbar-toggler"
+            data-bs-toggle="collapse" data-bs-target="#bs-navbar-collapse"
+            aria-controls="bs-navbar-collapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/">Dashboard</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/scoreboard">Scoreboard</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        
+        
+        
+        
+        <li class="nav-item">
+          <span id="timer" class="navbar-text ms-md-3"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Right after the navbar, so the countdown has its text at the first paint. -->
+    <script src="/static/js/components.64c51e0583a8.js"></script>
+
+    <main id="main">
+    
+    
+<div id="home-bg">
 </div>
 
 <div id="home-masthead">
@@ -66,36 +103,35 @@
       UTC 10/23 14:00 ~ 10/25 14:00
     </div>
     <div class="subtitle">Discord: <a href="https://discord.gg/ypqCsNxHmc">https://discord.gg/ypqCsNxHmc</a></div>
-    <div class="subtitle">Registration: [TBA]</div>
   </div>
 </div>
 
-<div id="content" class="container" style="transform: translate(0, -12rem);">
-  <div id="awards" class="container text-center">
+<div id="content" class="container">
+  <div id="awards-final" class="container text-center">
     <h3>Awards</h3>
-    <!-- 4x1 grid -->
-    <div class="row text-left">
-      <div class="col-lg-3">
+    <div class="row text-start">
+      <div class="col-xl-3">
         <div class="award">
           <div class="award-title">1st place</div>
           <div class="award-content">$8,000 USD</div>
+          <div class="award-note">+ Pre-qualification for <strong class="text-warning">DEF&nbsp;CON 35 CTF Final</strong></div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-xl-3">
         <div class="award">
           <div class="award-title">2nd place</div>
           <div class="award-content">$4,000 USD</div>
           <div class="award-note">-</div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-xl-3">
         <div class="award">
           <div class="award-title">3rd place</div>
           <div class="award-content">$2,000 USD</div>
           <div class="award-note">-</div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-xl-3">
         <div class="award">
           <div class="award-title">Taiwan Star</div>
           <div class="award-content">$1,000 USD</div>
@@ -104,8 +140,8 @@
       </div>
     </div>
   </div>
-  <div id="contest-info">
-    <div class="col-lg-6">
+  <div id="contest-info" class="row mx-0">
+    <div class="col-xl-6">
       <h2>競賽說明</h2>
       <ul>
         <li>競賽為 48 小時的線上 Jeopardy 形式 CTF</li>
@@ -117,7 +153,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Contest Information</h2>
       <ul>
         <li>This is an online jeopardy style CTF last for 48 hours.</li>
@@ -129,27 +165,27 @@
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>競賽時間</h2>
       <ul>
         <li>
           10/23(五) 22:00 ~ 10/25(日) 22:00 (UTC+8, 48 小時)
-          <a href="https://ctftime.org/event/3340"><img alt="CTFtime" src="https://ctftime.org/favicon.png"></a>
+          <a href="https://ctftime.org/event/3340/"><img alt="CTFtime" src="https://ctftime.org/favicon.png"></a>
         </li>
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Contest Time</h2>
       <ul>
         <li>
-          10/23 (Fri) 14:00 ~ 10/25 (Sun) 14:00 (UTC, 48 hours)
-          <a href="https://ctftime.org/event/3340"><img alt="CTFtime" src="https://ctftime.org/favicon.png"></a>
+          Oct. 23 (Fri.) 14:00 ~ Oct. 25 (Sun.) 14:00 (UTC, 48 hours)
+          <a href="https://ctftime.org/event/3340/"><img alt="CTFtime" src="https://ctftime.org/favicon.png"></a>
         </li>
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>獎金</h2>
       <ul>
         <li>第一名獎金: $8,000 USD</li>
@@ -159,7 +195,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Awards</h2>
       <ul>
         <li>1st place: $8,000 USD</li>
@@ -170,7 +206,7 @@
 
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>比賽注意事項</h2>
       <ul>
         <li>競賽期間，做出以下違規事項者將直接取消資格:</li>
@@ -185,7 +221,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Contest Rules</h2>
       <ul>
         <li>During the contest, any of the following behaviors will lead to disqualification:</li>
@@ -200,73 +236,72 @@
       </ul>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>保留權利</h2>
       <p>主辦單位可依狀況調整競賽的內容、流程及規則。</p>
     </div>
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Rights Reserved</h2>
       <p>Organizers may rearrange/modify contest challenges, proceedings, and rules.</p>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Advisor</h2>
-      <p class="col-lg-12" style="height: 100px">
-        <a href="https://moda.gov.tw/ADI/"><img class="col-lg-6 col-xs-6"
-            style="/*padding-top: 10px;*/ position: absolute; top: 50%; transform: translateY(-50%);"
-            src="/static/img/ADI-White.png" title="Administration for Digital Industries, moda"></a>
-      </p>
+      <div class="sponsor-logos">
+        <a href="https://moda.gov.tw/ADI/"><img class="logo-wide" src="/static/img/ADI-White.720858605e95.png"
+            alt="Administration for Digital Industries, moda" title="Administration for Digital Industries, moda"></a>
+      </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <h2>Organizers</h2>
-      <p class="col-lg-12" style="height: 100px">
-        <a href="http://hacker.org.tw/"><img class="col-lg-6 col-xs-6"
-            style="position: absolute; top: 50%; transform: translateY(-50%);"
-            src="/static/img/hit_logo_white2.png" title="Hacks in Taiwan Association"></a>
-        <a href="https://www.itri.org.tw/"><img class="col-lg-6 col-xs-6"
-            style="position: absolute; top: 50%; left: 50%; transform: translateY(-50%);"
-            src="https://ctf.hitcon.org/img/itri.png" title="Industrial Technology Research Institute"></a>
-      </p>
+      <div class="sponsor-logos">
+        <a href="http://hacker.org.tw/"><img src="/static/img/hit_logo_white2.26c8a67f711b.png"
+            alt="Hacks in Taiwan Association" title="Hacks in Taiwan Association"></a>
+        <a href="https://www.itri.org.tw/"><img src="/static/img/itri.d2a0ddfdf120.png"
+            alt="Industrial Technology Research Institute" title="Industrial Technology Research Institute"></a>
+      </div>
     </div>
 
   </div><!-- #contest-info -->
 
 </div>
-</div>
 
-      <hr>
-      <footer id="footer">
-        <h4 class="text-muted">&copy; HITCON CTF Team 2026</h4>
-	<p class="text-muted">Contact: <a href="mailto:ctf2026@hitcon.org">ctf2026@hitcon.org</a></p>
-      </footer>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-      <script src="/static/js/bootstrap.min.js"></script>
-      <script src="/static/js/main.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();
-        });
-      </script>
+    </main>
+    <div id="main-end" hidden></div>
 
-      
-<script src="/static/js/particles.min.js"></script>
+    <hr>
+
+    <footer id="footer">
+  <h4 class="text-muted">&copy; HITCON CTF Team 2026</h4>
+  <p class="text-muted">Contact: ctf2026@hitcon.org</p>
+</footer>
+
+
+    <!-- Alpine.js data-binding (deferred so it runs after full DOM is parsed,
+         picking up x-data / x-for / x-text directives added by page scripts).
+         The `alpine:init` listener registered in components.js fires first. -->
+    <script defer src="/static/js/alpine.min.37bbf94201a7.js"></script>
+
+    <script src="/static/js/bootstrap.bundle.min.fe96f9dd3617.js"></script>
+
+    
+<script src="/static/js/network-bg.a92bbab5fd92.js"></script>
 <script>
-  particlesJS.load('particles-js', "/static/js/particles.json", function () { });
+  networkBackground(document.getElementById('home-bg'));
 </script>
 
 
-      
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9JWWB52RG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H9JWWB52RG');
-</script>
-      
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9JWWB52RG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9JWWB52RG');
+    </script>
+    
   </body>
 </html>

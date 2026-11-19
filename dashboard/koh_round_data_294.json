@@ -1,0 +1,193 @@
+{
+  "current_round": 432,
+  "latest_round": 432,
+  "round": 294,
+  "challenges": [
+    {
+      "id": 15,
+      "name": "Drone Battle"
+    }
+  ],
+  "teams": [
+    {
+      "id": 308,
+      "name": "CSG",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 5
+      }
+    },
+    {
+      "id": 906,
+      "name": "AmiasSec",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 4
+      }
+    },
+    {
+      "id": 963,
+      "name": "RubiyaLab + NCRT",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 4
+      }
+    },
+    {
+      "id": 252,
+      "name": "KCSC",
+      "flag_css": "flag-sprite flag-v flag-_n",
+      "country_name": "Vietnam",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 351,
+      "name": "krauq",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 561,
+      "name": "HUH?¡",
+      "flag_css": "flag-sprite flag-u flag-_z",
+      "country_name": "Uzbekistan",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 722,
+      "name": "UIT-Wanna.W1n",
+      "flag_css": "flag-sprite flag-v flag-_n",
+      "country_name": "Vietnam",
+      "scores": {
+        "15": 3
+      }
+    },
+    {
+      "id": 198,
+      "name": "Dropper",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 2
+      }
+    },
+    {
+      "id": 473,
+      "name": "SWV",
+      "flag_css": "flag-sprite flag-l flag-_v",
+      "country_name": "Latvia",
+      "scores": {
+        "15": 2
+      }
+    },
+    {
+      "id": 644,
+      "name": "LuckyNoob",
+      "flag_css": "flag-sprite flag-n flag-_c",
+      "country_name": "New Caledonia",
+      "scores": {
+        "15": 2
+      }
+    },
+    {
+      "id": 1006,
+      "name": "M_art_M",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 2
+      }
+    },
+    {
+      "id": 1488,
+      "name": "InitCredGang",
+      "flag_css": "flag-sprite flag-p flag-_k",
+      "country_name": "Pakistan",
+      "scores": {
+        "15": 2
+      }
+    },
+    {
+      "id": 128,
+      "name": "mushroom_soup",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 165,
+      "name": "W4llz",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 245,
+      "name": "JackSpeor",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 522,
+      "name": "ChiLL Chain",
+      "flag_css": "flag-sprite flag-u flag-_z",
+      "country_name": "Uzbekistan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 548,
+      "name": "Cow Pig",
+      "flag_css": "flag-sprite flag-u flag-_s",
+      "country_name": "United States of America",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 578,
+      "name": "HackerS1r1ab",
+      "flag_css": "flag-sprite flag-t flag-_w",
+      "country_name": "Taiwan",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 848,
+      "name": "P1G SEKAI",
+      "flag_css": "",
+      "country_name": "",
+      "scores": {
+        "15": 1
+      }
+    },
+    {
+      "id": 885,
+      "name": "SaturnX",
+      "flag_css": "flag-sprite flag-k flag-_r",
+      "country_name": "South Korea",
+      "scores": {
+        "15": 1
+      }
+    }
+  ]
+}

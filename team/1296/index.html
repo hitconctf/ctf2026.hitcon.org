@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<!-- Dark from the first frame: the browser default is white until the CSS
+     loads, which shows as a white flash on a page switch or reload. -->
+<html lang="en" data-bs-theme="dark" style="background-color: #222; color-scheme: dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="dark">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="HITCON CTF 2026"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ctf2026.hitcon.org"/>
+    <meta property="og:image" content="https://ctf2026.hitcon.org/static/img/og_img.e05caabe0c32.png"/>
+    <meta property="og:site_name" content="HITCON CTF 2026"/>
+    <meta property="og:description" content="Online Jeopardy, Oct 23 - Oct 25 2026 (UTC)"/>
+    <title>HITCON CTF 2026</title>
+
+    <link rel="shortcut icon" type="image/png" href="/static/img/hitcon-ctf_monotone.d81fcb661da5.png"/>
+    <!-- Do not paint until the page content is parsed. Chrome keeps showing
+         the old page until then, so a page switch shows no partial page.
+         No page switch fade (view transitions): its snapshot of the old page
+         can be white, e.g. right after Chrome starts. -->
+    <link rel="expect" href="#main-end" blocking="render">
+
+    <!-- Fonts are served from this site and preloaded, so text is ready at the
+         first paint and never blinks in after a page switch. -->
+    <link rel="preload" href="/static/fonts/roboto-latin.f9788110cacc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/aldrich-latin.a7bb3cc8ab44.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.6032a13145bb.css">
+    <link rel="stylesheet" href="/static/css/main.5c2c733bf227.css">
+
+    
+<link rel="stylesheet" href="/static/flags/sprite.5b4ce04eed2e.css">
+
+  </head>
+  <body>
+    <!-- Logout is a POST. The navbar's Logout button submits this form. -->
+    <form id="logoutform" method="post" action="/team/logout" style="display:none">
+      <input type="hidden" name="csrfmiddlewaretoken" value="8Brr6A1Iib9jTvNYm1nsSIkGNmZYaesrOG2HVnQsIFibhX2YtYn0RUcfHadG3oRQ">
+    </form>
+
+    <!-- Values for components.js and the page scripts (dashboard.js,
+         scoreboard.js). The navbar and footer are rendered by Django. -->
+    <script>
+      window.__SITE_CONFIG__ = {
+        teamId:           -1,
+        contestStartTime: 1792764000.0,
+        contestEndTime:   1792936800.0,
+        currentTime:      1795099197.3312051,
+        refreshInterval:  30,
+        // Team pages are <teamUrlPrefix><id>.
+        teamUrlPrefix:    '/team/',
+        submitUrl:        '/dashboard/submit_flag',
+        loginUrl:         '/team/login',
+      };
+      // IS_STATIC is overridden to true in pre-generated static exports.
+      var IS_STATIC = true;
+    </script>
+
+    <nav id="top-nav" class="navbar navbar-expand-md fixed-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="/">HITCON CTF 2026</a>
+    <button type="button" class="navbar-toggler"
+            data-bs-toggle="collapse" data-bs-target="#bs-navbar-collapse"
+            aria-controls="bs-navbar-collapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/">Dashboard</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/scoreboard">Scoreboard</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        
+        
+        
+        
+        <li class="nav-item">
+          <span id="timer" class="navbar-text ms-md-3"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Right after the navbar, so the countdown has its text at the first paint. -->
+    <script src="/static/js/components.64c51e0583a8.js"></script>
+
+    <main id="main">
+    
+    
+<div id="content" class="container">
+<div class="col-lg-8 offset-lg-2">
+  <h4>khvnchik</h4>
+  <hr>
+  
+  <div class="row">
+    <div class="col-lg-2">Country:</div>
+    
+    <div class="col-lg-10">Kazakhstan <img src="/static/flags/kz.gif" width="16" height="11" alt=""></div>
+    
+  </div>
+  <div class="row">
+    <div class="col-lg-2">Rank:</div>
+    <div class="col-lg-10">597/1541</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">Score:</div>
+    <div class="col-lg-10">50</div>
+  </div>
+
+  
+
+  
+  <br>
+
+
+<h4>Solved Challenges</h4>
+<hr>
+<div class="table-responsive">
+<table id="solved" class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Challenge</th>
+      <th>Category</th>
+      <th>Score</th>
+      <th>Submit Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+				Welcome
+        
+			</td>
+      <td>welcome</td>
+      <td>50</td>
+      
+      <td>2026-10-23 17:48:53 UTC</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+
+
+<br>
+
+<h4>Unsolved Challenges</h4>
+<hr>
+<div class="table-responsive">
+<table id="unsolved" class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Challenge</th>
+      <th>Category</th>
+      <th>Score</th>
+      <th>Solved</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>Drone Battle</td>
+      <td>koh</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>flag.png</td>
+      <td>👀</td>
+      <td>207</td>
+      <td>58</td>
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>File Inspector</td>
+      <td>misc</td>
+      <td>268</td>
+      <td>25</td>
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>Works on My Machine</td>
+      <td>web</td>
+      <td>246</td>
+      <td>34</td>
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>mathclipse</td>
+      <td>misc</td>
+      <td>140</td>
+      <td>147</td>
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>My IOT homework_new folder（1）_ver.114514(final）</td>
+      <td>pwn</td>
+      <td>162</td>
+      <td>109</td>
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>RESEARCH.md</td>
+      <td>👁️</td>
+      <td>174</td>
+      <td>92</td>
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>oct</td>
+      <td>Crypto</td>
+      <td>180</td>
+      <td>84</td>
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>SPI TPM Free Trial</td>
+      <td>reverse,crypto</td>
+      <td>133</td>
+      <td>163</td>
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>litter</td>
+      <td>misc</td>
+      <td>199</td>
+      <td>65</td>
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>FastColl</td>
+      <td>Crypto</td>
+      <td>300</td>
+      <td>16</td>
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>Book of Eclipse</td>
+      <td>pwn</td>
+      <td>157</td>
+      <td>116</td>
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>vulcreator</td>
+      <td>👼</td>
+      <td>280</td>
+      <td>21</td>
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>v8ackup</td>
+      <td>pwn</td>
+      <td>195</td>
+      <td>69</td>
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>mathclipse Δ</td>
+      <td>misc</td>
+      <td>210</td>
+      <td>56</td>
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>You Got Calc&#x27;d?</td>
+      <td>🍊</td>
+      <td>321</td>
+      <td>12</td>
+    </tr>
+    
+    <tr>
+      <td>17</td>
+      <td>Site Preview</td>
+      <td>web</td>
+      <td>207</td>
+      <td>58</td>
+    </tr>
+    
+    <tr>
+      <td>18</td>
+      <td>Night Shift Archive</td>
+      <td>misc</td>
+      <td>215</td>
+      <td>52</td>
+    </tr>
+    
+    <tr>
+      <td>19</td>
+      <td>php2shell (real)</td>
+      <td>web</td>
+      <td>500</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td>20</td>
+      <td>Wiki.js</td>
+      <td>web</td>
+      <td>242</td>
+      <td>36</td>
+    </tr>
+    
+    <tr>
+      <td>21</td>
+      <td>Secret Notes Revenge</td>
+      <td>pwn</td>
+      <td>219</td>
+      <td>49</td>
+    </tr>
+    
+    <tr>
+      <td>22</td>
+      <td>VoteMe</td>
+      <td>Crypto</td>
+      <td>147</td>
+      <td>133</td>
+    </tr>
+    
+    <tr>
+      <td>23</td>
+      <td>vulcreator revenge</td>
+      <td>👼</td>
+      <td>288</td>
+      <td>19</td>
+    </tr>
+    
+    <tr>
+      <td>24</td>
+      <td>mathclipse ΔΔ</td>
+      <td>misc</td>
+      <td>218</td>
+      <td>50</td>
+    </tr>
+    
+    <tr>
+      <td>25</td>
+      <td>Repo Cassette</td>
+      <td>web</td>
+      <td>321</td>
+      <td>12</td>
+    </tr>
+    
+    <tr>
+      <td>26</td>
+      <td>io_urust</td>
+      <td>misc</td>
+      <td>232</td>
+      <td>41</td>
+    </tr>
+    
+    <tr>
+      <td>27</td>
+      <td>Will be there OSINT?</td>
+      <td>osint</td>
+      <td>158</td>
+      <td>115</td>
+    </tr>
+    
+    <tr>
+      <td>28</td>
+      <td>lazy-maze</td>
+      <td>rev</td>
+      <td>180</td>
+      <td>84</td>
+    </tr>
+    
+    <tr>
+      <td>29</td>
+      <td>SPI TPM</td>
+      <td>pwn</td>
+      <td>215</td>
+      <td>52</td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+
+    </main>
+    <div id="main-end" hidden></div>
+
+    <hr>
+
+    <footer id="footer">
+  <h4 class="text-muted">&copy; HITCON CTF Team 2026</h4>
+  <p class="text-muted">Contact: ctf2026@hitcon.org</p>
+</footer>
+
+
+    <!-- Alpine.js data-binding (deferred so it runs after full DOM is parsed,
+         picking up x-data / x-for / x-text directives added by page scripts).
+         The `alpine:init` listener registered in components.js fires first. -->
+    <script defer src="/static/js/alpine.min.37bbf94201a7.js"></script>
+
+    <script src="/static/js/bootstrap.bundle.min.fe96f9dd3617.js"></script>
+
+    
+    
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9JWWB52RG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9JWWB52RG');
+    </script>
+    
+  </body>
+</html>

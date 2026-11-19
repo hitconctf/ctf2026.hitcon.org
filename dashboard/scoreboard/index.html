@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<!-- Dark from the first frame: the browser default is white until the CSS
+     loads, which shows as a white flash on a page switch or reload. -->
+<html lang="en" data-bs-theme="dark" style="background-color: #222; color-scheme: dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="dark">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="HITCON CTF 2026"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ctf2026.hitcon.org"/>
+    <meta property="og:image" content="https://ctf2026.hitcon.org/static/img/og_img.e05caabe0c32.png"/>
+    <meta property="og:site_name" content="HITCON CTF 2026"/>
+    <meta property="og:description" content="Online Jeopardy, Oct 23 - Oct 25 2026 (UTC)"/>
+    <title>HITCON CTF 2026</title>
+
+    <link rel="shortcut icon" type="image/png" href="/static/img/hitcon-ctf_monotone.d81fcb661da5.png"/>
+    <!-- Do not paint until the page content is parsed. Chrome keeps showing
+         the old page until then, so a page switch shows no partial page.
+         No page switch fade (view transitions): its snapshot of the old page
+         can be white, e.g. right after Chrome starts. -->
+    <link rel="expect" href="#main-end" blocking="render">
+
+    <!-- Fonts are served from this site and preloaded, so text is ready at the
+         first paint and never blinks in after a page switch. -->
+    <link rel="preload" href="/static/fonts/roboto-latin.f9788110cacc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/aldrich-latin.a7bb3cc8ab44.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.6032a13145bb.css">
+    <link rel="stylesheet" href="/static/css/main.5c2c733bf227.css">
+
+    
+<link rel="stylesheet" href="/static/flags/sprite.5b4ce04eed2e.css">
+<link rel="preload" href="/static/flags/sprite.2a96622653c0.png" as="image">
+
+  </head>
+  <body>
+    <!-- Logout is a POST. The navbar's Logout button submits this form. -->
+    <form id="logoutform" method="post" action="/team/logout" style="display:none">
+      <input type="hidden" name="csrfmiddlewaretoken" value="1yOdRa5b3SjQmMTwMqUkjHc7nwzEnw9THDptGXUVtmsIKe8wTnUSiT4GhkNmgGyi">
+    </form>
+
+    <!-- Values for components.js and the page scripts (dashboard.js,
+         scoreboard.js). The navbar and footer are rendered by Django. -->
+    <script>
+      window.__SITE_CONFIG__ = {
+        teamId:           -1,
+        contestStartTime: 1792764000.0,
+        contestEndTime:   1792936800.0,
+        currentTime:      1795099190.0278788,
+        refreshInterval:  30,
+        // Team pages are <teamUrlPrefix><id>.
+        teamUrlPrefix:    '/team/',
+        submitUrl:        '/dashboard/submit_flag',
+        loginUrl:         '/team/login',
+      };
+      // IS_STATIC is overridden to true in pre-generated static exports.
+      var IS_STATIC = true;
+    </script>
+
+    <nav id="top-nav" class="navbar navbar-expand-md fixed-top" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="/">HITCON CTF 2026</a>
+    <button type="button" class="navbar-toggler"
+            data-bs-toggle="collapse" data-bs-target="#bs-navbar-collapse"
+            aria-controls="bs-navbar-collapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/">Dashboard</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/dashboard/scoreboard">Scoreboard</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        
+        
+        
+        
+        <li class="nav-item">
+          <span id="timer" class="navbar-text ms-md-3"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Right after the navbar, so the countdown has its text at the first paint. -->
+    <script src="/static/js/components.64c51e0583a8.js"></script>
+
+    <main id="main">
+    
+    
+
+<div id="content"
+     :class="mode === 'full' ? '' : 'container'"
+     data-loading x-data="scoreboardApp()">
+  <div id="scoreboard">
+    
+    
+    <div id="scoreboard-notice" class="alert alert-warning" role="status"
+         x-show="$store.site.contestEnded" style="display:none"><p class="mb-2">Following our post-competition investigation, the scoreboard has been updated to reflect the following adjustments:</p><ul class="mb-2"><li><strong class="alert-link">Disqualifications:</strong> SuperDiceCodeLovers, TeamH4C, lululala, ForgottenDestiny, gyu, and 不知归 have been disqualified.</li><li><strong class="alert-link">Drone Battle:</strong> KoH scores have been recalculated after excluding the disqualified teams.</li><li><strong class="alert-link">VulCreator / VulCreator-Revenge:</strong> SaturnX&#39;s points for both challenges and 熊貓特戰隊&#39;s points for VulCreator have been revoked.</li><li><strong class="alert-link">Jeopardy:</strong> All challenge scores have been recalculated after excluding disqualified teams.</li></ul><p class="mb-0">For more details, please refer to <a class="alert-link text-decoration-underline" href="/dashboard/">announcement on the dashboard</a>.</p></div>
+    
+
+    <div class="btn-group btn-toggle float-end">
+      <button class="btn btn-xs"
+              :class="mode === 'simple' ? 'btn-primary active' : 'btn-light'"
+              @click="setMode('simple')">Simple</button>
+      <template x-if="kohAvailable">
+        <button class="btn btn-xs"
+                :class="mode === 'koh' ? 'btn-primary active' : 'btn-light'"
+                @click="setMode('koh')">KoH</button>
+      </template>
+      <button class="btn btn-xs"
+              :class="mode === 'full' ? 'btn-primary active' : 'btn-light'"
+              @click="setMode('full')">Full</button>
+    </div>
+
+    <p class="text-muted" id="last-update" x-text="lastUpdate ? 'Last Update: ' + timeFmt.utc(lastUpdate) : ''"></p>
+
+    <div id="scoreboard-table" x-show="mode !== 'koh'">
+      <table :class="mode === 'full' ? 'table score-table-full' : 'table table-striped table-hover score-table-simple'">
+        <thead>
+          <tr>
+            <th :style="mode === 'full' ? 'width:50px' : ''">Rank</th>
+            <th :style="mode === 'full' ? 'width:160px' : ''">Team</th>
+            <th :style="mode === 'full' ? 'width:65px' : ''">Country</th>
+            <th :style="mode === 'full' ? 'width:65px' : ''">Score</th>
+
+            <!-- Full mode: solved count on small screens, one column per
+                 challenge on larger ones. Simple mode makes no cells. -->
+            <th class="d-md-none" x-show="mode === 'full'">Solved</th>
+            <template x-for="chal in visibleChallenges" :key="chal.id">
+              <th class="flag show-on-hover d-none d-md-table-cell">
+                <!-- Bootstrap Icons flag-fill (MIT) -->
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16"><path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001"/></svg>
+                <div>
+                  <span x-text="chal.name + (chal.type === 'koh' ? ' (KoH)' : ' (' + chal.score + ')')"></span>
+                  <p x-text="solvedLabel(chal)"></p>
+                </div>
+              </th>
+            </template>
+
+            <th x-show="mode === 'simple'">Last Submit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="(team, index) in teamstat" :key="team.id">
+            <tr class="entry" @click="rowClick(team.id)">
+              <td x-text="index + 1"></td>
+
+              <!-- Team name: a link in Full mode; in Simple mode the row is the link. -->
+              <td style="word-wrap:break-word;">
+                <a class="team-url" :href="mode === 'full' ? $store.site.teamUrl(team.id) : null">
+                  <strong x-text="team.name"></strong>
+                </a>
+              </td>
+
+              <td>
+                <template x-if="team.flag_css">
+                  <span>
+                    <i :class="team.flag_css"></i>
+                    <!-- Bind the class: x-show cannot beat the !important of d-md-inline. -->
+                    <span :class="mode === 'simple' ? 'd-none d-md-inline' : 'd-none'" x-text="'\u00a0' + team.country_name"></span>
+                  </span>
+                </template>
+                <template x-if="!team.flag_css"><span>-</span></template>
+              </td>
+
+              <td x-text="team.score"></td>
+
+              <td class="d-md-none" x-show="mode === 'full'" x-text="team.solved_challenge.length"></td>
+              <template x-for="chal in visibleChallenges" :key="chal.id">
+                <td class="chal-cell d-none d-md-table-cell"
+                    :class="{ solved: isSolved(team, chal), 'first-blood': isFirstBlood(team, chal) }"
+                    :title="isFirstBlood(team, chal) ? 'First blood' : null"
+                    x-text="chal.type === 'koh' ? (team.koh_scores[chal.id] ?? '') : ''"></td>
+              </template>
+
+              <td x-show="mode === 'simple'">
+                <template x-if="team.last_submit_time === null">
+                  <span>Never</span>
+                </template>
+                <template x-if="team.last_submit_time !== null">
+                  <span :data-bs-toggle="contestEnd ? null : 'tooltip'"
+                        :title="contestEnd ? null : lastSubmitTitle(team)"
+                        x-text="lastSubmitLabel(team)"></span>
+                </template>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KoH: the scores of one round of the open KoH challenges. -->
+    <template x-if="mode === 'koh'">
+      <div id="koh-table">
+        <div class="koh-round-picker" x-show="koh">
+          <label for="koh-round">Round</label>
+          <select id="koh-round" class="form-select" x-model="kohRound" @change="fetchKoh()">
+            <option value="" x-text="koh ? 'Latest (' + (koh.latest_round ?? koh.current_round) + ')' : 'Latest'"></option>
+            <template x-for="r in kohRounds" :key="r">
+              <option :value="r" x-text="r"></option>
+            </template>
+          </select>
+        </div>
+        <p class="text-muted" x-show="koh && !koh.teams.length">No KoH scores in this round.</p>
+        <table class="table table-striped table-hover score-table-simple" x-show="koh && koh.teams.length">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Country</th>
+              <template x-for="chal in (koh ? koh.challenges : [])" :key="chal.id">
+                <th x-text="chal.name"></th>
+              </template>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="(team, index) in (koh ? koh.teams : [])" :key="team.id">
+              <tr class="entry">
+                <td x-text="index + 1"></td>
+                <td style="word-wrap:break-word;">
+                  <a class="team-url" :href="$store.site.teamUrl(team.id)"><strong x-text="team.name"></strong></a>
+                </td>
+                <td>
+                  <template x-if="team.flag_css"><i :class="team.flag_css" :title="team.country_name"></i></template>
+                  <template x-if="!team.flag_css"><span>-</span></template>
+                </td>
+                <template x-for="chal in koh.challenges" :key="chal.id">
+                  <td x-text="team.scores[chal.id] ?? 0"></td>
+                </template>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </template>
+  </div>
+</div>
+
+
+    </main>
+    <div id="main-end" hidden></div>
+
+    <hr>
+
+    <footer id="footer">
+  <h4 class="text-muted">&copy; HITCON CTF Team 2026</h4>
+  <p class="text-muted">Contact: ctf2026@hitcon.org</p>
+</footer>
+
+
+    <!-- Alpine.js data-binding (deferred so it runs after full DOM is parsed,
+         picking up x-data / x-for / x-text directives added by page scripts).
+         The `alpine:init` listener registered in components.js fires first. -->
+    <script defer src="/static/js/alpine.min.37bbf94201a7.js"></script>
+
+    <script src="/static/js/bootstrap.bundle.min.fe96f9dd3617.js"></script>
+
+    
+<script src="/static/js/scoreboard.399119e39875.js"></script>
+
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9JWWB52RG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9JWWB52RG');
+    </script>
+    
+  </body>
+</html>
